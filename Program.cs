@@ -1,6 +1,7 @@
 ﻿using System;
 using MiApp.TiposDeDatos;
 using MiApp.NumerosYMetodos;
+using MiApp.StringYMetodos;
 
 namespace MiApp
 {
@@ -15,6 +16,10 @@ namespace MiApp
             // Instanciamos la clase ClaseDeNumerosYMetodos y llamamos a su método MostrarMetodosNumeros
             ClaseDeNumerosYMetodos miObjetoNumerosYMetodos = new ClaseDeNumerosYMetodos();
             miObjetoNumerosYMetodos.MostrarMetodosNumeros();
+
+            // Instanciamos la clase ClaseDeStringYMetodos y llamamos a su método MostrarStringYMetodos
+            ClaseDeStringYMetodos miObjetoStringYMetodos = new ClaseDeStringYMetodos();
+            miObjetoStringYMetodos.MostrarStrindYMetodos();
         }
     }
 }
