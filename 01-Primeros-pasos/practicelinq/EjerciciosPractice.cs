@@ -50,16 +50,16 @@ namespace MiApp.EjerciciosPractice
             };
             List<BaseDatosNumbers> listaPracticaNumeros = new List<BaseDatosNumbers>
             {
-                new BaseDatosNumbers { Number = 1 },
-                new BaseDatosNumbers { Number = 2 },
-                new BaseDatosNumbers { Number = 3 },
-                new BaseDatosNumbers { Number = 4 },
-                new BaseDatosNumbers { Number = 5 },
-                new BaseDatosNumbers { Number = 435 },
-                new BaseDatosNumbers { Number = 345 },
-                new BaseDatosNumbers { Number = 8 },
-                new BaseDatosNumbers { Number = 1 },
-                new BaseDatosNumbers { Number = 4 }
+                new BaseDatosNumbers (23),
+                new BaseDatosNumbers (234),
+                new BaseDatosNumbers (238974),
+                new BaseDatosNumbers (2),
+                new BaseDatosNumbers (24),
+                new BaseDatosNumbers (4),
+                new BaseDatosNumbers (26544),
+                new BaseDatosNumbers (2),
+                new BaseDatosNumbers (2),
+                new BaseDatosNumbers (78697)
             };
 
             // 1. Filtra los números mayores a 10 en una lista de enteros.
@@ -69,9 +69,33 @@ namespace MiApp.EjerciciosPractice
             {
                 Console.WriteLine(numero.Numero);
             }
+                Console.WriteLine("------------------------------");
+
             // 2. Obtén una lista con los cuadrados de cada número en una lista de enteros.
+            var numerosAlCuadrado = listaPracticaNumeros.Select(x => x.Numero * x.Numero ).ToList();
+
+            foreach (var item in numerosAlCuadrado)
+            {
+                Console.WriteLine(item);
+            }
+                Console.WriteLine("------------------------------");
             // 3. Ordena alfabéticamente una lista de nombres.
+            var nombreOrdenados = listaPractica.OrderBy( x => x.Name ).ToList();
+
+            foreach (var item in nombreOrdenados)
+            {
+                Console.WriteLine(item.Name);
+            }
+                Console.WriteLine("------------------------------");
+
             // 4. Ordena una lista de precios de mayor a menor.
+            var preciosOrdenados = listaPracticaNumeros.OrderByDescending( x => x.Numero ).ToList();
+
+            foreach (var item in preciosOrdenados)
+            {
+                Console.WriteLine(item.Numero);
+            }
+                Console.WriteLine("------------------------------");
             // 5. Encuentra el primer número par en una lista de enteros.
             // 6. Encuentra el último nombre en una lista de nombres.
             // 7. Obtén el primer número negativo en una lista de enteros, o un valor por defecto si no hay
