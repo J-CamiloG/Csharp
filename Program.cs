@@ -3,6 +3,7 @@ using MiApp.TiposDeDatos;
 using MiApp.NumerosYMetodos;
 using MiApp.StringYMetodos;
 using MiApp.PracticeLinQ;
+using MiApp.EjerciciosPractice;
 
 namespace MiApp
 {
@@ -22,8 +23,11 @@ namespace MiApp
             // ClaseDeStringYMetodos miObjetoStringYMetodos = new ClaseDeStringYMetodos();
             // miObjetoStringYMetodos.MostrarStrindYMetodos();
             
-            ClassPracticeLinQ miObjectPracticeLinQ = new ClassPracticeLinQ();
-            miObjectPracticeLinQ.primtPracticeLinQ();
+            // ClassPracticeLinQ miObjectPracticeLinQ = new ClassPracticeLinQ();
+            // miObjectPracticeLinQ.primtPracticeLinQ();
+
+            ClassEjercicicosPractice miObjetoEjerciciosPractice = new ClassEjercicicosPractice();
+            miObjetoEjerciciosPractice.printEjerciciosPractice();
         }
     }
 }
