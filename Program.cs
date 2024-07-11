@@ -4,6 +4,7 @@ using MiApp.NumerosYMetodos;
 using MiApp.StringYMetodos;
 using MiApp.PracticeLinQ;
 using MiApp.EjerciciosPractice;
+using MiApp.Entregable;
 
 namespace MiApp
 {
@@ -26,8 +27,11 @@ namespace MiApp
             // ClassPracticeLinQ miObjectPracticeLinQ = new ClassPracticeLinQ();
             // miObjectPracticeLinQ.primtPracticeLinQ();
 
-            ClassEjercicicosPractice miObjetoEjerciciosPractice = new ClassEjercicicosPractice();
-            miObjetoEjerciciosPractice.printEjerciciosPractice();
+            // ClassEjercicicosPractice miObjetoEjerciciosPractice = new ClassEjercicicosPractice();
+            // miObjetoEjerciciosPractice.printEjerciciosPractice();\
+
+            ClassEntregable miObjetoEntregable =  new ClassEntregable();
+            miObjetoEntregable.printEntregable();
         }
     }
 }
