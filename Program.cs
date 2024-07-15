@@ -5,6 +5,7 @@ using MiApp.StringYMetodos;
 using MiApp.PracticeLinQ;
 using MiApp.EjerciciosPractice;
 using MiApp.Entregable;
+using MiApp.semana3;
 
 namespace MiApp
 {
@@ -30,8 +31,14 @@ namespace MiApp
             // ClassEjercicicosPractice miObjetoEjerciciosPractice = new ClassEjercicicosPractice();
             // miObjetoEjerciciosPractice.printEjerciciosPractice();\
 
-            ClassEntregable miObjetoEntregable =  new ClassEntregable();
-            miObjetoEntregable.printEntregable();
+            // ClassEntregable miObjetoEntregable =  new ClassEntregable();
+            // miObjetoEntregable.printEntregable();
+            Persona persona = new Persona("Juan Camilo", new DateTime(1997, 08, 16));
+            persona.MostrarDetalles();
+
+            Coche coche = new Coche("Mazda", "1997", 1997);
+            coche.printInfo();
+
         }
     }
 }
