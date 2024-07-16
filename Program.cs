@@ -74,10 +74,25 @@ namespace MiApp
 
             // Productos.printProductos(listaProductos);
 
-            Console.Clear();
-            Estudiante estudiantes = new Estudiante(23, "camilo", "campillo", new DateTime(1997, 08, 16));
-            estudiantes.Apellido = "";
-            estudiantes.printPersonas();
-        }
+            // Console.Clear();
+            // Estudiante estudiantes = new Estudiante(23, "camilo", "campillo", new DateTime(1997, 08, 16));
+            // estudiantes.Apellido = "";
+            // estudiantes.printPersonas();
+
+            int id = 1;
+            string nombre = "Juan";
+            string apellido = "Pérez";
+            string correo = "juan.perez@example.com";
+            double sueldoBase = 1000000;
+            double porcentajePension = 0.04; 
+            double porcentajeSalud = 0.04; 
+            double porcentajeAhorroCoperativa = 0.2; 
+
+            Empleado empleado = new Empleado(id, nombre, apellido, correo, sueldoBase, porcentajePension, porcentajeSalud, porcentajeAhorroCoperativa);
+
+            double sueldoNeto = empleado.CalcularSueldoNeto();
+
+            Console.WriteLine($"El sueldo neto de {empleado.Nombre} {empleado.Apellido} es: {sueldoNeto:C}");
+            }
     }
 }
