@@ -57,5 +57,83 @@ namespace MiApp.semana3
             Console.WriteLine($"Modelo : {Modelo}");
             Console.WriteLine($"Año : {Año}");
         }
+
+        public void ActualizarAño(int nuevoAño)
+        {
+            Año = nuevoAño;
+        }
+    }
+
+    public class Libro
+    {
+        public string? Titulo { get; set; }
+        public string? Autor { get; set; }
+
+        public Libro(string titulo, string autor)
+        {
+            Titulo = titulo.ToUpper();
+            Autor = autor;
+        }
+
+        public static void printLibros(List<Libro> lista)
+        {   
+            foreach (var libro in lista)
+            {
+            Console.WriteLine($"Título: {libro.Titulo}, Autor: {libro.Autor}");
+            }
+        }
+
+        public static void contarTexto(string text)
+        {
+            Console.WriteLine(text.Length);
+        }
+    }
+
+    public class Calculadora
+    {
+        public decimal Num1 { get; set; }
+        public decimal Num2 { get; set; }
+
+        public Calculadora(decimal num1, decimal num2)
+        {
+            Num1 = num1;
+            Num2 = num2;
+        }
+
+        public static void Sumar(int Num1, int Num2)
+        {
+            Console.WriteLine(Num1 + Num2);
+        }
+
+        public static void restar(int Num1, int Num2)
+        {
+            Console.WriteLine(Num1 - Num2) ;
+        }
+
+        public static void multiplicar(int Num1, int Num2)
+        {
+            Console.WriteLine(Num1 * Num2) ;
+        }
+    }
+
+    public class Productos
+    {
+        public string Nombre { get; set; }
+        public decimal Precio { get; set; }
+
+
+        public Productos(string nombre, decimal precio)
+        {
+            Nombre = nombre.ToLower();
+            Precio = precio;
+        }
+
+        public static void printProductos(List<Productos> listaProductos)
+        {
+            foreach (var item in listaProductos)
+            {
+                Console.WriteLine($"Nombre: {item.Nombre}, Precio: {item.Precio}");
+            }
+        }
     }
 }

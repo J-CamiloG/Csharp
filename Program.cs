@@ -33,12 +33,45 @@ namespace MiApp
 
             // ClassEntregable miObjetoEntregable =  new ClassEntregable();
             // miObjetoEntregable.printEntregable();
+
+            //intancia persona 
             Persona persona = new Persona("Juan Camilo", new DateTime(1997, 08, 16));
             persona.MostrarDetalles();
 
+            //intancia coche
             Coche coche = new Coche("Mazda", "1997", 1997);
+            coche.ActualizarAño(1998);
             coche.printInfo();
+            
+            // intancia de libros
+            List<Libro> listaLibros = new List<Libro>
+            {
+                new Libro("Cien años de soledad", "Gabriel García Márquez"),
+                new Libro("El Quijote", "Miguel de Cervantes"),
+                new Libro("Harry Potter y la piedra filosofal", "J.K. Rowling")
+            };
 
+            string texto = "hola comoe estas?";
+
+            Libro.printLibros(listaLibros);
+            Libro.contarTexto(texto);
+
+
+            //intancia de la calculadora
+            Calculadora calculadora = new Calculadora(55, 60);
+            Calculadora.Sumar(55, 60);
+            Calculadora.restar(55, 60);
+            Calculadora.multiplicar(55, 60);
+
+            //intancia de productos
+            List<Productos> listaProductos = new List<Productos>
+            {
+                new Productos("Huevos", 3000),
+                new Productos("Leche", 1800),
+                new Productos("Pan", 1600)
+            };
+
+            Productos.printProductos(listaProductos);
         }
     }
 }
