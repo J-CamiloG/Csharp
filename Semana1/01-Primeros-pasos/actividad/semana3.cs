@@ -136,4 +136,50 @@ namespace MiApp.semana3
             }
         }
     }
+
+    public class Empleado
+{
+    private int Id { get; set;}
+    public string Nombre { get; set; }
+    public string Apellido { get; set; }
+    public string Correo { get; set; }
+    private double SueldoBase { get; set; }
+    public double PorcentajePension { get; set; }
+    public double PorcentajeSalud { get; set; }
+    private double PorcentajeAhorroCoperativa {get; set;}
+
+    public Empleado(int id, string nombre, string apellido, string correo, double sueldoBase, double porcentajePension, double porcentajeSalud, double porcentajeAhorroCoperativa)
+    {
+        Id = id;
+        Nombre = nombre.ToLower();
+        Apellido = apellido.ToLower();
+        Correo = correo.ToLower();
+        SueldoBase = sueldoBase;
+        PorcentajePension = porcentajePension;
+        PorcentajeSalud = porcentajeSalud;
+        PorcentajeAhorroCoperativa = porcentajeAhorroCoperativa;
+    }
+
+    public double CalcularSueldoNeto()
+    {
+        double deducciones = CalcularDeducciones();
+        double ahorro = CalcularAhorro();
+        double sueldoNeto = SueldoBase - deducciones - ahorro;
+        return sueldoNeto;
+    }
+
+
+    private double CalcularDeducciones()
+    {
+        double deduccionesPension = SueldoBase * PorcentajePension;
+        double deduccionesSalud = SueldoBase * PorcentajeSalud;
+        return deduccionesPension + deduccionesSalud;
+    }
+
+    private double CalcularAhorro()
+    {
+        return SueldoBase * PorcentajeAhorroCoperativa;
+    }
+}
+
 }
