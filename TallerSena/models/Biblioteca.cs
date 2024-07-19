@@ -53,10 +53,10 @@ namespace MiApp.ClassBiblioteca
             }
         }
 
-        public void EliminarLibro(int id)
+        public void EliminarLibro(string nombre)
         {
-            var libroAEliminar = Books.Find(libro => libro.Id == id);
-            if (libroAEliminar != null)
+            var libroAEliminar = Books.Find(libro => libro.Titulo.ToLower().Contains(nombre.ToLower()));
+            if (libroAEliminar!= null)
             {
                 Books.Remove(libroAEliminar);
                 Console.WriteLine("Libro eliminado.");
@@ -67,12 +67,15 @@ namespace MiApp.ClassBiblioteca
             }
         }
 
-        public void BuscarLibro(int id)
+        public void BuscarLibro(string nombre)
         {
-            var libroEncontrado = Books.Find(libro => libro.Id == id);
-            if (libroEncontrado != null)
+            var librosEncontrados = Books.Where(libro => libro.Titulo.ToLower().Contains(nombre.ToLower())).ToList();
+            if (librosEncontrados.Any())
             {
-                libroEncontrado.MostrarInformacion();
+                foreach (var libro in librosEncontrados)
+                {
+                    libro.MostrarInformacion();
+                }
             }
             else
             {

@@ -40,26 +40,12 @@ namespace MiApp
                         biblioteca.MostrarLibros();
                         break;
                     case "3":
-                        Console.WriteLine("Ingrese el ID del libro a buscar:");
-                        if (int.TryParse(Console.ReadLine(), out int idBuscar))
-                        {
-                            biblioteca.BuscarLibro(idBuscar);
-                        }
-                        else
-                        {
-                            Console.WriteLine("ID inválido.");
-                        }
+                        Console.WriteLine("Ingresa el nombre del libro");
+                        biblioteca.BuscarLibro(Console.ReadLine());
                         break;
                     case "4":
-                        Console.WriteLine("Ingrese el ID del libro a eliminar:");
-                        if (int.TryParse(Console.ReadLine(), out int idEliminar))
-                        {
-                            biblioteca.EliminarLibro(idEliminar);
-                        }
-                        else
-                        {
-                            Console.WriteLine("ID inválido.");
-                        }
+                        Console.WriteLine("Ingrese el nombre del libro a eliminar:");
+                        biblioteca.EliminarLibro(Console.ReadLine());
                         break;
                     case "5":
                         salir = true;
