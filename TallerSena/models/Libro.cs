@@ -5,13 +5,12 @@ namespace MiApp.ClassLibro
 {
     public class Libro : Publicacion
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Autor { get; set; }
         public string Genero { get; set; }
         public decimal Precio { get; set; }
 
         public Libro(
-            int id, 
             string autor, 
             string genero, 
             decimal precio,
@@ -19,7 +18,7 @@ namespace MiApp.ClassLibro
             string añoPublicacion
         ) : base(titulo, añoPublicacion)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Autor = autor;
             Genero = genero;
             Precio = precio;
@@ -28,7 +27,7 @@ namespace MiApp.ClassLibro
         // Método para mostrar información del libro
         public void MostrarInformacion()
         {
-            Console.WriteLine($"ID: {Id}, Autor: {Autor}, Genero: {Genero}, Precio: ${Precio}, Título: {Titulo}, Año: {AñoPublicacion}");
+            Console.WriteLine($"Autor: {Autor}, Genero: {Genero}, Precio: ${Precio}, Título: {Titulo}, Año: {AñoPublicacion}");
         }
 
         // Método para calcular el descuento del libro

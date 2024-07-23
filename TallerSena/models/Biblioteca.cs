@@ -7,7 +7,6 @@ namespace MiApp.ClassBiblioteca
     public class Biblioteca
     {
         public List<Libro> Books { get; set; }
-
         public Biblioteca()
         {
             Books = new List<Libro>();
@@ -15,12 +14,6 @@ namespace MiApp.ClassBiblioteca
 
         public void AgregarLibro()
         {
-            Console.WriteLine("Ingresa el id");
-            if (!int.TryParse(Console.ReadLine(), out int idIngresado))
-            {
-                Console.WriteLine("ID inválido.");
-                return;
-            }
 
             Console.WriteLine("Ingrese autor");
             string? autorIngresado = Console.ReadLine();
@@ -41,7 +34,7 @@ namespace MiApp.ClassBiblioteca
                 return;
             }
 
-            var nuevoLibro = new Libro(idIngresado, autorIngresado, generoIngresado, precioIngresado, tituloIngresado, añoIngresado);
+            var nuevoLibro = new Libro( autorIngresado, generoIngresado, precioIngresado, tituloIngresado, añoIngresado);
             Books.Add(nuevoLibro);
         }
 
@@ -55,32 +48,23 @@ namespace MiApp.ClassBiblioteca
 
         public void EliminarLibro(string nombre)
         {
-            var libroAEliminar = Books.Find(libro => libro.Titulo.ToLower().Contains(nombre.ToLower()));
-            if (libroAEliminar!= null)
-            {
-                Books.Remove(libroAEliminar);
-                Console.WriteLine("Libro eliminado.");
-            }
-            else
+            var libroAEliminar = Books.Where(libro => libro.Titulo.ToLower().Contains(nombre.ToLower())).ToList();
+            if (libroAEliminar.Count == 0)
             {
                 Console.WriteLine("Libro no encontrado.");
+                return;
             }
+            Books.Remove(libroAEliminar[0]);
         }
 
         public void BuscarLibro(string nombre)
         {
             var librosEncontrados = Books.Where(libro => libro.Titulo.ToLower().Contains(nombre.ToLower())).ToList();
-            if (librosEncontrados.Any())
-            {
                 foreach (var libro in librosEncontrados)
                 {
                     libro.MostrarInformacion();
                 }
-            }
-            else
-            {
-                Console.WriteLine("Libro no encontrado.");
-            }
+
         }
     }
 }
