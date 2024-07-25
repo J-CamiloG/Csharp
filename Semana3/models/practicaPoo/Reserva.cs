@@ -5,25 +5,20 @@ using System.Threading.Tasks;
 
 namespace Semana3.models.practicaPoo
 {
-    public class Reserva : Habitacion
-    {
+    public class Reserva {
         string HabitacionReservada {get; set;}
-        DateTime FechaReserva {get; set;}
+        string FechaInicio {get; set;}
+        string FechaFin {get; set;}
 
         public Reserva(
-            string habitacionReservada, 
-            DateTime fechaReserva,
-            string numeroHabitacion,
-            string tipo
-            ) : base (numeroHabitacion, tipo)
+            string habitacionReservada,
+            string fechaInicio,
+            string fechaFin
+        )
         {
             HabitacionReservada = habitacionReservada;
-            FechaReserva = fechaReserva;
-        }
-
-        public void mostrarHabitacion()
-        {
-            Console.WriteLine($"habitacion Reservada : {HabitacionReservada}");
+            FechaInicio = fechaInicio;
+            FechaFin = fechaFin;
         }
     }
 }
