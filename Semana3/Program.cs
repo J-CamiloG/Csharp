@@ -24,31 +24,51 @@ class Program
             // }
         
         // ejercicio 7
-            // Crear una nueva instancia de Tienda
-            Tienda miTienda = new Tienda();
+            // Tienda miTienda = new Tienda();
 
-            // Crear algunas instancias de Prenda
-            Prenda prenda1 = new Prenda ("camiseta", "L", 4500);
-            Prenda prenda2 = new Prenda ("pantalon", "L", 4500);
-            Prenda prenda3 = new Prenda ("chaqueta", "L", 4570);
-            Prenda prenda4 = new Prenda ("pantalon", "L", 4500);
-            Prenda prenda5 = new Prenda ("chaqueta", "L", 4500);
-            Prenda prenda6 = new Prenda ("pantalon", "L", 4590);
-            Prenda prenda7 = new Prenda ("chaqueta", "L", 4500);
+            // Prenda prenda1 = new Prenda ("camiseta", "L", 4500);
+            // Prenda prenda2 = new Prenda ("pantalon", "L", 4500);
+            // Prenda prenda3 = new Prenda ("chaqueta", "L", 4570);
+            // Prenda prenda4 = new Prenda ("pantalon", "L", 4500);
+            // Prenda prenda5 = new Prenda ("chaqueta", "L", 4500);
+            // Prenda prenda6 = new Prenda ("pantalon", "L", 4590);
+            // Prenda prenda7 = new Prenda ("chaqueta", "L", 4500);
 
-            // Agregar las prendas a la tienda
-            miTienda.AgregarProducto(prenda1);
-            miTienda.AgregarProducto(prenda2);
-            miTienda.AgregarProducto(prenda3);
-            miTienda.AgregarProducto(prenda4);
-            miTienda.AgregarProducto(prenda5);
-            miTienda.AgregarProducto(prenda6);
-            miTienda.AgregarProducto(prenda7);
+            // miTienda.AgregarProducto(prenda1);
+            // miTienda.AgregarProducto(prenda2);
+            // miTienda.AgregarProducto(prenda3);
+            // miTienda.AgregarProducto(prenda4);
+            // miTienda.AgregarProducto(prenda5);
+            // miTienda.AgregarProducto(prenda6);
+            // miTienda.AgregarProducto(prenda7);
 
-            Console.WriteLine("Nombre del Producto");
+            // Console.WriteLine("Nombre del Producto");
+            // string nombre = Console.ReadLine();
+
+            // miTienda.BuscarProducto(nombre);
+        
+        // ejercicio 8
+            Empresa miEmpresa = new Empresa();
+
+            Empleado empleado1 = new Empleado ("camilo", "L", 4500);
+            Empleado empleado2 = new Empleado ("campillo", "L", 4500);
+            Empleado empleado3 = new Empleado ("abrer", "L", 4570);
+            Empleado empleado4 = new Empleado ("carlos", "L", 4500);
+            Empleado empleado5 = new Empleado ("mani", "L", 4500);
+            Empleado empleado6 = new Empleado ("carlota",  "L", 4590);
+            Empleado empleado7 = new Empleado ("axuere", "L", 4500);
+
+            miEmpresa.AgregarEmpleado( empleado1 );
+            miEmpresa.AgregarEmpleado( empleado2 );
+            miEmpresa.AgregarEmpleado( empleado3 );
+            miEmpresa.AgregarEmpleado( empleado4 );
+            miEmpresa.AgregarEmpleado( empleado5 );
+            miEmpresa.AgregarEmpleado( empleado6 );
+            miEmpresa.AgregarEmpleado( empleado7 );
+
+            Console.WriteLine("Nombre del empleado");
             string nombre = Console.ReadLine();
 
-            miTienda.BuscarProducto(nombre);
-        
+            miEmpresa.BuscarEmpleado(nombre);
     }
 }
