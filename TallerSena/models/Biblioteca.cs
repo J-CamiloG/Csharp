@@ -34,7 +34,7 @@ namespace MiApp.ClassBiblioteca
                 return;
             }
 
-            var nuevoLibro = new Libro( autorIngresado, generoIngresado, precioIngresado, tituloIngresado, añoIngresado);
+            var nuevoLibro = new Libro(autorIngresado, generoIngresado, precioIngresado, tituloIngresado, añoIngresado);
             Books.Add(nuevoLibro);
         }
 
