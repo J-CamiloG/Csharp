@@ -34,6 +34,7 @@ namespace TallerEscuela.models
             string nombreAcudiente,
             string cursoActual)
         {
+            Id = new Guid();
             Nombre = nombre;
             Apellido = apellido;
             TipoDocumento = tipoDocumento;
@@ -65,6 +66,20 @@ namespace TallerEscuela.models
             foreach (var calificacion in Calificaciones)
             {
                 Console.WriteLine($"{calificacion},");
+            }
+        }
+
+        public static void FuncionEditarEstudiante(List<Estudiante> lista)
+        {
+            Console.WriteLine("Ingresa el número de documento del estudiante: ");
+            var numDocumento = Console.ReadLine();
+            var encontrado = lista.Find(estudiante => estudiante.ObtenerNumDocumento() == numDocumento);
+
+            if ( encontrado != null )
+            { 
+                Console.Write("Email: ");
+                encontrado.Correo = Console.ReadLine();
+
             }
         }
 

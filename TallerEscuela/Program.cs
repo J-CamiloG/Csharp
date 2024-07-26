@@ -10,6 +10,8 @@ class Program
         while (bandera)
         {
             AdministradorApp.ImprimirMenu();
+            AdministradorApp.AgregarProfesoresEj();
+            AdministradorApp.AgregarEstudiantesEj();
             var opcion = Console.ReadLine();
 
             switch (opcion)
@@ -24,25 +26,31 @@ class Program
                     AdministradorApp.PausarMenu();
                     break;
                 case "2":
-                    // Agregar Profesor
+                    var profesorNuevo = AdministradorApp.PedirDatosProfesor();
+                    AdministradorApp.PedirAsignaturas(profesorNuevo);
+                    AdministradorApp.AgregarProfesor(profesorNuevo);
                     AdministradorApp.PausarMenu();
                     break;
                 case "3":
-                    AdministradorApp.MostrarEstudiantes();
+                    AdministradorApp.MostrarEstudiantes(AdministradorApp.Estudiantes);
                     AdministradorApp.PausarMenu();
                     break;
                 case "4":
                     // Mostrar Profesores
+                    AdministradorApp.MostrarProfesores(AdministradorApp.Profesores);
                     AdministradorApp.PausarMenu();
                     break;
                 case "5":
                     // Editar estudiante
+                    AdministradorApp.EjecutarEditar();
+                    AdministradorApp.PausarMenu();
                     break;
                 case "6":
                     // Editar profesor
                     break;
                 case "7":
-                    // Eliminar estudiante
+                    // Buscar por LINQ
+                    AdministradorApp.MostrarMenuBusquedas();
                     break;
                 case "8":
                 // Eliminar profesor

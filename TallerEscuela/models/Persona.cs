@@ -17,19 +17,31 @@ namespace TallerEscuela.models
         protected string Email;
         protected string Telefono;
 
-
         //metodo mostrar detalles
         public virtual void MostrarDetalles()
         {
-            Console.WriteLine("Id: " + Id);
-            Console.WriteLine("Nombre: " + Nombre);
-            Console.WriteLine("Apellido: " + Apellido);
-            Console.WriteLine("TipoDocumento: " + TipoDocumento);
-            Console.WriteLine("Direccion: " + Direccion);
-            Console.WriteLine("Correo: " + Correo);
-            Console.WriteLine("NumeroDocumento: " + NumeroDocumento);
-            Console.WriteLine("Email: " + Email);
-            Console.WriteLine("Telefono: " + Telefono);
+            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine($"Apellido: {Apellido}");
+            Console.WriteLine($"Tipo de documento: {TipoDocumento}");
+            Console.WriteLine($"Numero de documento: {NumeroDocumento}");
+            Console.WriteLine($"Email: {Email}");
+            Console.WriteLine($"Telefono: {Telefono}");
+        }
+
+        public string ObtenerNumDocumento()
+        {
+            return NumeroDocumento;
+        }
+
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
+        public string ObtenerApellido()
+        {
+            return Apellido;
         }
     }
 }
