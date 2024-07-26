@@ -1,54 +1,65 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace TallerEscuela.models
 {
     public class Estudiante : Persona
     {
-        public string NombreAcudiente;
-        public string CursoActual;
+        public string NombreAcudiente { get; set; }
+        public string CursoActual { get; set; }
         public int Edad
-            { 
-                get
-                {
-                    DateTime hoy = DateTime.Today;
-                    int edad = hoy.Year - FechaNacimiento.Year;
+        { 
+            get
+            {
+                DateTime hoy = DateTime.Today;
+                int edad = hoy.Year - FechaNacimiento.Year;
 
-                    if (FechaNacimiento.Date > hoy.AddYears(-edad)) edad--;
-                    return edad;
-                }
+                if (FechaNacimiento.Date > hoy.AddYears(-edad)) edad--;
+                return edad;
             }
-        public DateTime FechaNacimiento;
-        public List<double> Calificaciones;
-        
+        }
+        public DateTime FechaNacimiento { get; set; }
+        public List<double> Calificaciones { get; set; }
 
         public Estudiante(
+            string nombre,
+            string apellido,
+            string tipoDocumento,
+            string numeroDocumento,
+            string correo,
+            string telefono,
+            string direccion,
+            DateTime fechaNacimiento,
             string nombreAcudiente,
-            string cursoActual,
-            DateTime fechaNacimiento
-        )
+            string cursoActual)
         {
+            Nombre = nombre;
+            Apellido = apellido;
+            TipoDocumento = tipoDocumento;
+            NumeroDocumento = numeroDocumento;
+            Correo = correo;
+            Telefono = telefono;
+            Direccion = direccion;
+            FechaNacimiento = fechaNacimiento;
             NombreAcudiente = nombreAcudiente;
             CursoActual = cursoActual;
-            FechaNacimiento = fechaNacimiento;
             Calificaciones = new List<double>();
         }
 
-
-        // metodo paraagregar calificacion 
-
+        // método para agregar calificación 
         public void AgregarCalificaciones(double calificacion)
         {
             Calificaciones.Add(calificacion);
         }
 
+        // método calcular promedio
         private void CalcularPromedio()
         {
             Console.WriteLine($"Promedio: {Calificaciones.Average():F2}");
         }
 
+        // método mostrar calificación
         public void MostrarCalificaciones()
         {
             foreach (var calificacion in Calificaciones)
@@ -57,14 +68,19 @@ namespace TallerEscuela.models
             }
         }
 
-        public override void MostrarDetalles() //override -> indica que se sobreescribir
+        // método mostrar detalles
+        public override void MostrarDetalles() // override -> indica que se sobreescribe
         {
-            base.MostrarDetalles();
+            Console.WriteLine($"Nombre: {Nombre} {Apellido}"); 
+            Console.WriteLine($"Dirección: {Direccion}");
+            Console.WriteLine($"Teléfono: {Telefono}");
+            Console.WriteLine($"Correo: {Correo}");
             Console.WriteLine($"Nombre Acudiente: {NombreAcudiente}");
             Console.WriteLine($"Curso Actual: {CursoActual}");
             Console.WriteLine($"Edad: {Edad} años");
-            Console.WriteLine("Calificaciones: ");
+            Console.WriteLine($"Calificaciones:");
             MostrarCalificaciones();
+            Console.WriteLine($"Promedio:");
             CalcularPromedio();
         }
     }

@@ -5,42 +5,50 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Bienvenido al sistema de gestión escolar");
-        AdministradorApp.ImprimirMenu();
-        var opción = Console.ReadLine();
+        var bandera = true;
 
-        while (opción!= "0")
+        while (bandera)
         {
-            switch (opción)
+            AdministradorApp.ImprimirMenu();
+            var opcion = Console.ReadLine();
+
+            switch (opcion)
             {
+                case "0":
+                    bandera = false;
+                    break;
                 case "1":
-                    
+                    var estudianteNuevo = AdministradorApp.PedirDatosEstudiante();
+                    AdministradorApp.PedirCalificaciones(estudianteNuevo);
+                    AdministradorApp.AgregarEstudiante(estudianteNuevo);
+                    AdministradorApp.PausarMenu();
                     break;
                 case "2":
-                    
+                    // Agregar Profesor
+                    AdministradorApp.PausarMenu();
                     break;
                 case "3":
-                    
+                    AdministradorApp.MostrarEstudiantes();
+                    AdministradorApp.PausarMenu();
                     break;
                 case "4":
-                    
+                    // Mostrar Profesores
+                    AdministradorApp.PausarMenu();
                     break;
                 case "5":
-                    
+                    // Editar estudiante
                     break;
                 case "6":
-                    
+                    // Editar profesor
                     break;
                 case "7":
-                    
+                    // Eliminar estudiante
                     break;
                 case "8":
-                    
-                    break;
+                // Eliminar profesor
                 default:
-                    Console.WriteLine("Opción no válida");
                     break;
-                }
+            }
         }
     }
 }

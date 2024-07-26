@@ -11,6 +11,8 @@ namespace TallerEscuela.models
         protected string Nombre;
         protected string Apellido;
         protected string TipoDocumento;
+        protected string Direccion;
+        protected string Correo;
         protected string NumeroDocumento;
         protected string Email;
         protected string Telefono;
@@ -19,13 +21,15 @@ namespace TallerEscuela.models
         //metodo mostrar detalles
         public virtual void MostrarDetalles()
         {
-            Console.WriteLine($"Id: {Id}");
-            Console.WriteLine($"Nombre: {Nombre}");
-            Console.WriteLine($"Apellido: {Apellido}");
-            Console.WriteLine($"Tipo Documento: {TipoDocumento}");
-            Console.WriteLine($"Número Documento: {NumeroDocumento}");
-            Console.WriteLine($"Email: {Email}");
-            Console.WriteLine($"Teléfono: {Telefono}");
+            Console.WriteLine("Id: " + Id);
+            Console.WriteLine("Nombre: " + Nombre);
+            Console.WriteLine("Apellido: " + Apellido);
+            Console.WriteLine("TipoDocumento: " + TipoDocumento);
+            Console.WriteLine("Direccion: " + Direccion);
+            Console.WriteLine("Correo: " + Correo);
+            Console.WriteLine("NumeroDocumento: " + NumeroDocumento);
+            Console.WriteLine("Email: " + Email);
+            Console.WriteLine("Telefono: " + Telefono);
         }
     }
 }

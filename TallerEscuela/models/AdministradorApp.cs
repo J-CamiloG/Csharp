@@ -12,32 +12,81 @@ namespace TallerEscuela.models
 
 
         //pedir los datos del estudiante 
-        public Estudiante PedirDatosEstudiante()
+        public static Estudiante PedirDatosEstudiante()
         {
             Console.WriteLine("Ingrese los datos del estudiante:");
+
             Console.Write("Nombre: ");
             string? nombre = Console.ReadLine();
-            Console.Write("Fecha de nacimiento (dd/mm/yyyy): ");
-            DateTime fechaNacimiento = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Apellido: ");
+            string? apellido = Console.ReadLine();
+
+            Console.Write("Tipo de documento: ");
+            string? tipoDocumento = Console.ReadLine();
+
+            Console.Write("Número de documento: ");
+            string? numeroDocumento = Console.ReadLine();
+
+            Console.Write("Email: ");
+            string? email = Console.ReadLine();
+
+            Console.Write("Teléfono: ");
+            string? telefono = Console.ReadLine();
+
+            Console.Write("Dirección: ");
+            string? direccion = Console.ReadLine();
+
+            Console.Write("Nombre Acudiente: ");
+            string? nombreAcudiente = Console.ReadLine();
+
             Console.Write("Curso: ");
             string? curso = Console.ReadLine();
 
-            Estudiante nuevoEstudiante = new Estudiante(nombre, curso, fechaNacimiento);
-            return nuevoEstudiante;
+            // Solicitar y leer la fecha de nacimiento
+            Console.Write("Fecha de nacimiento (dd/mm/yyyy): ");
+            string? fechaNacimientoStr = Console.ReadLine();
+            DateTime fechaNacimiento = DateTime.ParseExact(fechaNacimientoStr, "d/M/yyyy", null);
+
+            return new Estudiante(
+                nombre, 
+                apellido, 
+                tipoDocumento, 
+                numeroDocumento, 
+                email, 
+                telefono, 
+                direccion, 
+                fechaNacimiento, 
+                nombreAcudiente, 
+                curso);
         }
+
+        //pedir calificaciones
+        public static void PedirCalificaciones(Estudiante estudiante)
+        {
+            Console.WriteLine("Cuántas notas vas a agregar?: ");
+            var notas = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= notas; i++)
+            {
+                Console.WriteLine($"Escribe tu {i} nota: ");
+                var nota = Convert.ToDouble(Console.ReadLine());
+                estudiante.AgregarCalificaciones(nota);
+            }
+        } 
+
         // agrrgar estudiantes 
-        public void AgregarEstudiante(Estudiante estudiante)
+        public static void AgregarEstudiante(Estudiante estudiante)
         {
             Estudiantes.Add(estudiante);
         }
 
         // agregar profesor 
-        public void AgregarProfesor(Profesor profesor)
+        public static void AgregarProfesor(Profesor profesor)
         {
             Profesores.Add(profesor);
         }
         //mostrar estudiante
-        public void MostrarEstudiantes()
+        public static void MostrarEstudiantes()
         {
             foreach (var estudiante in Estudiantes)
             {
@@ -46,7 +95,7 @@ namespace TallerEscuela.models
         }
 
         //mostrar estudiante
-        public void MostrarProfesor()
+        public static void MostrarProfesor()
         {
             foreach (var profesor in Profesores)
             {
@@ -69,7 +118,7 @@ namespace TallerEscuela.models
             Console.Write("Seleccione una opción: ");
         }
 
-        public void PausarMenu()
+        public static void PausarMenu()
         {   
             Console.WriteLine("Presione cualquier tecla para continuar...");
             Console.ReadKey();
