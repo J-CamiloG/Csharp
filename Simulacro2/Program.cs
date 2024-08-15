@@ -15,10 +15,11 @@ namespace MiApp
             {
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("1. Ver Los datos de Driver ");
-                Console.WriteLine("2. Editar licensia de conduccion");
-                Console.WriteLine("3. Eliminar vehiculo");
-                Console.WriteLine("4. Editar menbrecia");
-                Console.WriteLine("5. ");
+                Console.WriteLine("2. Ver Los datos de Vehicles ");
+                Console.WriteLine("3. Eliminar Vehiculo");
+                Console.WriteLine("4. Añadir años de experiencia");
+                Console.WriteLine("5. Editar menbrecia");
+                Console.WriteLine("6. ");
 
                 var option = Console.ReadLine();
 
@@ -28,13 +29,13 @@ namespace MiApp
                         system.Read();
                         break;
                     case "2":
-                        
+                        system.ReadVehicles();
                         break;
                     case "3":
-                        
+                        system.Delete();
                         break;
                     case "4":
-                        
+
                         break;
                     case "5":
                         exit = true;

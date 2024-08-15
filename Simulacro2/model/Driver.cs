@@ -28,8 +28,6 @@ namespace Simulacro2.model
             DrivingExperience = Convert.ToInt32(drivingExperience);
         }
 
-        
-        
         protected override void ShowDetails()
         {   
             base.ShowDetails();
@@ -42,15 +40,20 @@ namespace Simulacro2.model
         {
             ShowDetails();
         }
-        public void  AddExperience(int years)
-        {
-            DrivingExperience += years;
-            Console.WriteLine($"Driver {Name} {LastName} has gained {years} years of driving experience.");
-        }
+        // public void  AddExperience()
+        // {
+        //     Console.Write("Enter the number of years of driving experience to add: ");
+        //     int years = Convert.ToInt32(Console.ReadLine());
+        //     DrivingExperience += years;
+        //     Console.WriteLine($"Driver {Name} {LastName} has gained {years} years of driving experience.");
+        // }
 
-        public void UpdateLicenseCategory(string newCategory)
-        {
-            Console.WriteLine($"Driver {Name} {LastName} has been updated with a new license category of {LicenseCategory}.");
-        }
+        // public void UpdateLicenseCategory()
+        // {
+        //     Console.Write("Enter the new license category: ");
+        //     string newCategory = Console.ReadLine();
+        //     LicenseCategory = newCategory;
+        //     Console.WriteLine($"Driver {Name} {LastName}'s license category has been updated to {LicenseCategory}.");
+        // }
     }
 }

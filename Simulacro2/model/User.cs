@@ -29,7 +29,57 @@ namespace Simulacro2.model
             Address = address;
         }
 
-        //metodo mostrar informacion
+          // get para la lectura de las propiedades protectec
+        public Guid GetId()
+        {
+            return Id;
+        }
+        public string GetName()
+        {
+            return Name;
+        }
+        public string GetLastName()
+        {
+            return LastName;
+        }
+        public string GetTypeDocument()
+        {
+            return TypeDocument;
+        }
+        public DateTime GetBirthdate()
+        {
+            return Birthdate;
+        }
+        public string GetAddress()
+        {
+            return Address;
+        }
+        public string GetEmail()
+        {
+            return Email;
+        } 
+        public string GetPhonoNumber()
+        {
+            return PhoneNumber;
+        }
+
+        // set para los edit de las propiedades
+        public void GetName(string name)
+        {
+            Name = name;
+        }
+        public void GetLastName( string lastName)
+        {
+            LastName = lastName;
+        }
+        public void GetEmail( string email)
+        {
+            Email = email;
+        } 
+        public void GetTPhoneNumber(string phoneNumber)
+        {
+            PhoneNumber = phoneNumber;
+        }
 
         protected virtual void ShowDetails()
         {   

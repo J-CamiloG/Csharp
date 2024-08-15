@@ -14,6 +14,8 @@ namespace Simulacro2.model
         public string EngineNumber { get; set; }
         public string SerialNumber { get; set; }
         public byte PeopleCapacity { get; set; }
+        public string? LicenseCategory { get; internal set; }
+
         // public Driver Owner {get; set;}
 
         public Vehicle(int id, string placa, string tipo, string engineNumber, string serialNumber, byte peopleCapacity)
@@ -26,10 +28,16 @@ namespace Simulacro2.model
             PeopleCapacity = peopleCapacity;    
         }
 
-        public void DeleteVehicle()
-        {
-            // Implementación de borrado del vehículo
-            Console.WriteLine($"Vehículo con placa {Placa} borrado exitosamente.");
+        public void DisplayDetails()
+        {   
+            Console.WriteLine($"ID: {Id}");
+            Console.WriteLine($"Placa: {Placa}");
+            Console.WriteLine($"Tipo: {Tipo}");
+            Console.WriteLine($"Número de motor: {EngineNumber}");
+            Console.WriteLine($"Número de serie: {SerialNumber}");
+            Console.WriteLine($"Capacidad de personas: {PeopleCapacity}");
+            // Console.WriteLine($"Dueño: {Owner.Name}"); 
         }
+
     }
 }
